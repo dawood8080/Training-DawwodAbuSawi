@@ -14,7 +14,7 @@ Array.prototype.sortFunction = function sortFunction() {
             if(arr[i] < arr[j]) {
                 var x = arr[i];
                 arr[i] = arr[j];
-                arr[j] = arr[i];
+                arr[j] = x;
             }
         }
     }
@@ -32,7 +32,7 @@ Array.prototype.searchForValue = function searchForValue(value) {
     var result;
     for (var i = 0 ; i < this.length ; i++) {
         if(this[i] === value) {
-            result = this[i];
+            result = i;
             break;
         }
     }
@@ -50,4 +50,4 @@ console.log(arr.getFirstElement());
 
 console.log(arr.getLastElement());
 
-console.log(arr.searchForValue(99));
+console.log(arr.searchForValue(8));
