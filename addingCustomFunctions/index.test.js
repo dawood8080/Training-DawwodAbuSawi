@@ -8,7 +8,7 @@
 
 //  TODO
 
-Array.prototype.sortFunction = function sortFunction() {
+Array.prototype.sortFunction = function () {
     for(var i=0 ; i < this.length ; i++) {
         for (var j= 0; j < i; j++) {
             if(this[i] < this[j]) {
@@ -20,15 +20,15 @@ Array.prototype.sortFunction = function sortFunction() {
     }
 }
 
-Array.prototype.getFirstElement = function getFirstElement() {
+Array.prototype.getFirstElement = function () {
     return this[0];
 }
 
-Array.prototype.getLastElement = function getLastElement() {
+Array.prototype.getLastElement = function () {
     return this[this.length-1];
 }
 
-Array.prototype.searchForValue = function searchForValue(value) {
+Array.prototype.searchForValue = function (value) {
     var result;
     for (var i = 0 ; i < this.length ; i++) {
         if(this[i] === value) {
