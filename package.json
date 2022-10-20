@@ -1,0 +1,15 @@
+{
+  "name": "dawood-package",
+  "version": "1.0.0",
+  "description": "first package created by me",
+  "main": "index.js",
+  "repository": "git@github.com:dawood8080/Training-DawwodAbuSawi.git",
+  "author": "dawood8080 <dawood_khader@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": ""
+  },
+  "dependencies": {
+    "jest": "^29.2.1"
+  }
+}
