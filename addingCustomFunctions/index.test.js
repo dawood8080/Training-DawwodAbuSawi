@@ -9,12 +9,12 @@
 //  TODO
 
 Array.prototype.sortFunction = function sortFunction() {
-    for(var i=0 ; i < arr.length ; i++) {
+    for(var i=0 ; i < this.length ; i++) {
         for (var j= 0; j < i; j++) {
-            if(arr[i] < arr[j]) {
-                var x = arr[i];
-                arr[i] = arr[j];
-                arr[j] = x;
+            if(this[i] < this[j]) {
+                var x = this[i];
+                this[i] = this[j];
+                this[j] = x;
             }
         }
     }
