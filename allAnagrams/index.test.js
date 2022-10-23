@@ -24,7 +24,7 @@ const allAnagrams = function(string, prefix) {
   }
   else {
     for ( var i = 0 ; i < string.length ; i++ ) {
-      if ( mark[i] === 0 ) {
+      if (!mark[i]) {
         mark[i] = 1;
         allAnagrams(string, prefix + string[i]);
         mark[i] = 0;
@@ -35,8 +35,6 @@ const allAnagrams = function(string, prefix) {
 
 
 var example = 'abcd';
-var stringSize = example.length;
-while(stringSize--) mark.push(0);
 
 // Complexity is O(n!)
 allAnagrams(example, '');
