@@ -49,3 +49,16 @@ function balancedParens(input) {
   return stack.length === 0 ? true : false;
 }
 
+describe('balancedParens', () => {
+  it('should return true if the parentheses are balanced', () => {
+    expect(balancedParens('{}()[]')).toBe(true);
+    expect(balancedParens('[{({}()[])}]')).toBe(true);
+  });
+
+  it('should return false if the parentheses are not balanced', () => {
+    expect(balancedParens('{})')).toBe(false);
+    expect(balancedParens('))))')).toBe(false);
+    expect(balancedParens('{')).toBe(false);
+    expect(balancedParens(']')).toBe(false);
+  })
+});
