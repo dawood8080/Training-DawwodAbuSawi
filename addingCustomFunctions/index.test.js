@@ -39,15 +39,36 @@ Array.prototype.searchForValue = function (value) {
     return result || 'Not found';
 }
 
-var arr = new Array(1,3,5,0,3,8,11)
+describe('AddingCustomFunctions', () => {
+    describe('sortFunction', () => {
+        it('should sort an array', () => {
+            var arr = new Array(1,3,5,0,3,8,11);
+            var expectedArray = arr;
+            expectedArray.sort();
+            var returnedValue = arr.sortFunction();
+            expect(returnedValue).toBe(undefined);
+            expect(expectedArray).toBe(arr);
+        })
+    })
 
+    describe('getFirstElement', () => {
+        it('should return the first element', () => {
+            var arr = new Array(1,3,5,0,3,8,11);
+            expect(arr.getFirstElement()).toBe(1);
+        })
+    })
 
-arr.sortFunction();
+    describe('getLastElement', () => {
+        it('should return the last element', () => {
+            var arr = new Array(1,3,5,0,3,8,11);
+            expect(arr.getLastElement()).toBe(11);
+        })
+    })
 
-console.log(arr.join(' '));
-
-console.log(arr.getFirstElement());
-
-console.log(arr.getLastElement());
-
-console.log(arr.searchForValue(8));
+    describe('getLastElement', () => {
+        it('should return the index of the given element', () => {
+            var arr = new Array(1,3,5,0,3,8,11);
+            expect(arr.searchForValue(8)).toBe(5);
+        })
+    })
+})
