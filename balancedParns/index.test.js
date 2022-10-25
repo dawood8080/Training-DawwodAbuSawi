@@ -46,7 +46,7 @@ function balancedParens(input) {
       }
     }
   }
-  return stack.length === 0 ? true : false;
+  return !stack.length;
 }
 
 describe('balancedParens', () => {
