@@ -70,6 +70,8 @@ describe('bubbleSort', () => {
     it('should return a sorted array', () => {
         expect(bubbleSort([1,0,4,3,9])).toStrictEqual([0,1,3,4,9]);
         expect(bubbleSort([1,2,3,4])).toStrictEqual([1,2,3,4]);
+        expect(bubbleSort([1])).toStrictEqual([1]);
+        expect(bubbleSort([])).toStrictEqual([]);
     })
 })
 
