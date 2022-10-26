@@ -65,3 +65,20 @@ const bubbleSort = (array) => {
     }
     return array;
 };
+
+describe('bubbleSort', () => {
+    it('should return a sorted array', () => {
+        expect(bubbleSort([1,0,4,3,9])).toStrictEqual([0,1,3,4,9]);
+        expect(bubbleSort([1,2,3,4])).toStrictEqual([1,2,3,4]);
+    })
+})
+
+describe('checkSortedFunction', () => {
+    it('should return true if the array is sorted', () => {
+        expect(checkSortedFunction([1,2,3,4])).toBe(true);
+    });
+
+    it('should return false if the array is not sorted', () => {
+        expect(checkSortedFunction([1,5,2,4])).toBe(false);
+    })
+});
