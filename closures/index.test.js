@@ -16,10 +16,12 @@ myGame.timeSpentPlaying(); //should return 30;
 myGame.myLevel(); //should return "You need to improve your game"
 */
 
+const messages = ['I need to improve my game', 'You need to improve your game', 'Wow, I have wasted a lot of time'];
+
 function pingPongTracker() {
     let timeSpent = 0;
 
-    const timeSpentPlaying = function () {
+    const timeSpentPlaying = () => {
       return timeSpent;
     }
 
@@ -29,8 +31,8 @@ function pingPongTracker() {
     }
 
     const myLevel = () => {
-      return timeSpent < 30 ? 'I need to improve my game'
-      : timeSpent > 100 ? 'Wow, I have wasted a lot of time' : 'You need to improve your game';
+      return timeSpent < 30 ? messages[0]
+      : timeSpent > 100 ? messages[2] : messages[1];
     }
 
     return {
@@ -51,31 +53,31 @@ describe('pingPongTracker', () => {
     })
   });
 
-  it('should return \'I need to improve my game\' when calling myLevel', () => {
+  it(`should return \'${messages[0]}\' when calling myLevel`, () => {
     const myGame = pingPongTracker();
 
     expect(myGame.timeSpentPlaying()).toBe(0);
     expect(myGame.playOneGame()).toBe('Game Played');
     expect(myGame.timeSpentPlaying()).toBe(15);
-    expect(myGame.myLevel()).toBe('I need to improve my game')
+    expect(myGame.myLevel()).toBe(messages[0])
   });
 
-  it('should return \'You need to improve your game\' when calling myLevel', () => {
+  it(`should return \'${messages[1]}\' when calling myLevel`, () => {
     const myGame = pingPongTracker();
 
     expect(myGame.playOneGame()).toBe('Game Played');
     expect(myGame.playOneGame()).toBe('Game Played');
     expect(myGame.timeSpentPlaying()).toBe(30);
-    expect(myGame.myLevel()).toBe('You need to improve your game');
+    expect(myGame.myLevel()).toBe(messages[1]);
   });
 
-  it('should return \'Wow, I have wasted a lot of time\'', () => {
+  it(`should return \'${messages[2]}\'`, () => {
     const myGame = pingPongTracker();
 
     for( let i = 0 ; i < 8 ; i++){
       expect(myGame.playOneGame()).toBe('Game Played');
     }
     expect(myGame.timeSpentPlaying()).toBe(120);
-    expect(myGame.myLevel()).toBe('Wow, I have wasted a lot of time');
+    expect(myGame.myLevel()).toBe(messages[2]);
   });
 });
