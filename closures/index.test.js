@@ -43,7 +43,7 @@ function pingPongTracker() {
 }
 
 describe('pingPongTracker', () => {
-  it('should return functions', () => {
+  it('returns functions', () => {
     const myGame = pingPongTracker();
 
     expect(myGame).toMatchObject({
@@ -53,7 +53,7 @@ describe('pingPongTracker', () => {
     })
   });
 
-  it(`should return \'${messages[0]}\' when calling myLevel`, () => {
+  it(`returns \'${messages[0]}\' when calling myLevel`, () => {
     const myGame = pingPongTracker();
 
     expect(myGame.timeSpentPlaying()).toBe(0);
@@ -62,7 +62,7 @@ describe('pingPongTracker', () => {
     expect(myGame.myLevel()).toBe(messages[0])
   });
 
-  it(`should return \'${messages[1]}\' when calling myLevel`, () => {
+  it(`returns \'${messages[1]}\' when calling myLevel`, () => {
     const myGame = pingPongTracker();
 
     expect(myGame.playOneGame()).toBe('Game Played');
@@ -71,7 +71,7 @@ describe('pingPongTracker', () => {
     expect(myGame.myLevel()).toBe(messages[1]);
   });
 
-  it(`should return \'${messages[2]}\'`, () => {
+  it(`returns \'${messages[2]}\'`, () => {
     const myGame = pingPongTracker();
 
     for( let i = 0 ; i < 8 ; i++){
