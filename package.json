@@ -7,7 +7,8 @@
   "author": "dawood8080 <dawood_khader@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": ""
+    "dev": "",
+    "test": "jest"
   },
   "dependencies": {
     "jest": "^29.2.1"
